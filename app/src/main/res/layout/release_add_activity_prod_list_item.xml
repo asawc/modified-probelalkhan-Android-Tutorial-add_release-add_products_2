@@ -1,0 +1,84 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/first_line">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical|fill_vertical"
+            android:paddingBottom="12dp"
+            android:text="@string/name"
+            android:textSize="@dimen/product_list_item_text_size" />
+
+        <TextView
+            android:id="@+id/symbol"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:gravity="start|center_vertical|fill_vertical"
+            android:paddingBottom="12dp"
+            android:text="SymbolWFWIGF"
+            android:textSize="@dimen/product_list_item_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:text="Qty: "
+            android:gravity="start|center_vertical|fill_vertical"
+            android:textStyle="bold"
+            android:textSize="@dimen/product_list_item_text_size" />
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginBottom="0dp"
+            android:gravity="start|center_vertical|fill_vertical"
+            android:text="00"
+            android:textSize="@dimen/product_list_item_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/second_line"
+        android:layout_below="@+id/first_line"
+        android:layout_marginTop="0dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:gravity="start|center_vertical|fill_vertical"
+            android:text="Requested quantity:"
+            android:textSize="@dimen/product_list_item_text_size"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/requested_quantity"
+            android:layout_width="70dp"
+            android:layout_height="62dp"
+            android:layout_marginLeft="5dp"
+            android:inputType="numberSigned"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:gravity="center"
+            android:textSize="@dimen/product_list_item_text_size">
+     <!--       <requestFocus /> -->
+        </EditText>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
