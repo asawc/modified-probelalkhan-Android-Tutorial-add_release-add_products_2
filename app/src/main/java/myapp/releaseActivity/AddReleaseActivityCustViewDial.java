@@ -125,10 +125,14 @@ public class AddReleaseActivityCustViewDial extends AppCompatActivity {
         getProducts();
         Log.d("ProductListSize", String.valueOf(productList.size()));
 
-        final ProductInputAdapter<ProductInputView> productsInputAdapter =
+
+        final ProductAdapter<ProductView> adapter_prod = new ProductAdapter(this, R.layout.product_spinner_dropdown_item, productViews);
+        adapter_prod.setDropDownViewResource(R.layout.product_spinner_dropdown_item);
+
+        /*final ProductInputAdapter<ProductInputView> productsInputAdapter =
                 new ProductInputAdapter<ProductInputView>(this,
                         R.layout.release_add_activity_prod_list_item, productViews);
-        prodsListView.setAdapter(productsInputAdapter);
+        prodsListView.setAdapter(productsInputAdapter);*/
        // final ProductAdapter<ProductView> prodAdapter = new ProductAdapter<ProductView>(this, R.layout.product_spinner_dropdown_item, productViews);
       //  prodAdapter.setDropDownViewResource(R.layout.product_spinner_dropdown_item);
         productsButton.setOnClickListener(new View.OnClickListener() {
@@ -153,7 +157,8 @@ public class AddReleaseActivityCustViewDial extends AppCompatActivity {
                         // Czyści listę produktów
                         if(!productViews.isEmpty()) {
                             productViews.clear();
-                            productsInputAdapter.notifyDataSetChanged();
+                            adapter_prod.notifyDataSetChanged();
+                            //productsInputAdapter.notifyDataSetChanged();
                         }
 
                         // Tworzy nową listę produktów zaznaczonych
@@ -166,7 +171,8 @@ public class AddReleaseActivityCustViewDial extends AppCompatActivity {
                         }
                         // zmiana w widoku listy (ListView)
                         if (!productViews.isEmpty())
-                            productsInputAdapter.notifyDataSetChanged();
+                            adapter_prod.notifyDataSetChanged();
+                            //productsInputAdapter.notifyDataSetChanged();
                         dialog.dismiss();
                     }
                 });
@@ -376,13 +382,13 @@ public class AddReleaseActivityCustViewDial extends AppCompatActivity {
             LayoutInflater inflater = getLayoutInflater();
             View layout = inflater.inflate(R.layout.product_spinner_dropdown_item, parent, false);
 
-            CheckedTextView symbol = (CheckedTextView) layout.findViewById(R.id.symbol);
+            TextView symbol = (TextView) layout.findViewById(R.id.symbol);
             symbol.setText(productViews.get(position).getSymbol());
 
-            CheckedTextView name = (CheckedTextView) layout.findViewById(R.id.name);
+            TextView name = (TextView) layout.findViewById(R.id.name);
             name.setText(productViews.get(position).getName());
 
-            CheckedTextView quantity = (CheckedTextView) layout.findViewById(R.id.product_quantity);
+            TextView quantity = (TextView) layout.findViewById(R.id.product_quantity);
             quantity.setText(String.valueOf(productViews.get(position).getQuantity()));
 
             return layout;
