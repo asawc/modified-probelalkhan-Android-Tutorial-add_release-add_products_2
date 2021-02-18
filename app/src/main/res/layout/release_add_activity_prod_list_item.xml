@@ -8,28 +8,28 @@
     <LinearLayout
         android:id="@+id/first_line"
         android:layout_width="401dp"
-        android:layout_height="64dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="153dp"
-            android:layout_height="64dp"
-            android:gravity="start|center_vertical|fill_vertical"
-            android:text="@string/name"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:gravity="top|center_vertical|fill_vertical"
+            android:text="@string/product_name"
             android:textSize="@dimen/product_list_item_text_size" />
 
         <TextView
             android:id="@+id/symbol"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_width="118dp"
+            android:layout_height="match_parent"
             android:layout_marginBottom="0dp"
-            android:gravity="start|center_vertical|fill_vertical"
+            android:gravity="center_horizontal|fill_vertical"
             android:text="RXC100001"
             android:textSize="@dimen/product_list_item_text_size" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="62dp"
+            android:layout_height="match_parent"
             android:gravity="start|center_vertical|fill_vertical"
             android:text="Qty: "
             android:textSize="@dimen/product_list_item_text_size"
@@ -37,8 +37,8 @@
 
         <TextView
             android:id="@+id/quantity"
-            android:layout_width="38dp"
-            android:layout_height="62dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="false"
             android:layout_marginBottom="0dp"
@@ -49,25 +49,24 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/second_line"
+        android:layout_width="392dp"
+        android:layout_height="33dp"
         android:layout_below="@+id/first_line"
         android:layout_marginTop="0dp">
-        
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="62dp"
+            android:layout_height="match_parent"
             android:gravity="start|center_vertical|fill_vertical"
             android:text="Requested quantity:"
             android:textSize="@dimen/product_list_item_text_size"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/requested_quantity"
-            android:layout_width="70dp"
-            android:layout_height="62dp"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:gravity="center"
             android:imeOptions="actionDone"
