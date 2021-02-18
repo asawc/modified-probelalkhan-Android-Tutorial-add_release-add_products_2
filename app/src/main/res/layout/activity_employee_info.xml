@@ -23,15 +23,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Product symbol"
+                    android:text="Employee symbol"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <TextView
-                    android:id="@+id/textViewProductsymbol"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textViewEmployeeSymbol"
+                    android:layout_width="251dp"
                     android:layout_height="match_parent"
                     android:padding="10dp"
-                    android:text="RXC 100 001"
+                    android:text="RXC 1001"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </TableRow>
@@ -42,15 +42,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Product name"
+                    android:text="Surname"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <TextView
-                    android:id="@+id/textViewProductname"
+                    android:id="@+id/textViewEmployeeSurname"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:padding="10dp"
-                    android:text="Wziernik plastikowy DN50"
+                    android:text="Kowalski"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </TableRow>
@@ -61,15 +61,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Quantity"
+                    android:text="Name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                 <TextView
-                    android:id="@+id/textViewQuantity"
+                    android:id="@+id/textViewEmployeeName"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:padding="10dp"
-                    android:text="1"
+                    android:text="Jan"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </TableRow>
@@ -80,13 +80,13 @@
         </TableLayout>
 
         <Button
-            android:id="@+id/buttonScan2"
+            android:id="@+id/buttonScan5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Scan" />
 
         <Button
-            android:id="@+id/buttonLogout3"
+            android:id="@+id/buttonLogout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Logout" />

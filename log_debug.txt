@@ -1,0 +1,21 @@
+public void displayValues(){
+        if (productViews.isEmpty() == false){
+            Log.d("productV.isEmpty=false", "true");
+        }
+        else if (productViews.isEmpty() == true) {
+            Log.d("productV.isEmpty=false", "false");
+        }
+
+        if (emplChecked == true){
+            Log.d("emplChecked", "true");
+        }
+        else if (emplChecked == false) {
+            Log.d("emplChecked", "false");
+        }
+
+        if (emplChecked && (productViews.isEmpty() == false)){
+            Log.d("Can I add a new release", "yes");
+        }
+        else {
+            Log.d("Can I add a new release", "no");
+        }

@@ -10,7 +10,8 @@
     <com.budiyev.android.codescanner.CodeScannerView
         android:id="@+id/scanner_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="634dp"
+        android:layout_alignStart="@id/buttonCheck"
         app:autoFocusButtonColor="@android:color/white"
         app:autoFocusButtonVisible="true"
         app:flashButtonColor="@android:color/white"
@@ -24,22 +25,6 @@
         app:frameThickness="2dp"
         app:maskColor="#77000000">
 
-        <Button
-            android:id="@+id/buttonLogout5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginBottom="2dp"
-            android:text="Logout" />
-
-        <Button
-            android:id="@+id/buttonScan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scan" />
     </com.budiyev.android.codescanner.CodeScannerView>
 
     <Button

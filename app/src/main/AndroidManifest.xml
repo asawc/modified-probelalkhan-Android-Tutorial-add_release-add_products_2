@@ -15,11 +15,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name="myapp.releaseActivity.archive.AddReleaseActivitySpinner"></activity>
         <activity android:name="myapp.releaseActivity.AddReleaseActivityCustViewDial">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="myapp.releaseActivity.archive.AddReleaseActivityStringDialog">
         </activity>

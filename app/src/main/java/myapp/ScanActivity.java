@@ -32,8 +32,7 @@ public class ScanActivity extends AppCompatActivity {
     private CodeScanner mCodeScanner;
     private Button buttonCheck, buttonLogout2;
     //final String[] productsymbol_array = new String[1];
-    public String productsymbol; // = productsymbol_array[0];
-
+    public String symbol; // = productsymbol_array[0];
 
 
     @Override
@@ -53,9 +52,9 @@ public class ScanActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast toast = Toast.makeText(ScanActivity.this, result.getText(), Toast.LENGTH_SHORT); //.show();
-                        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 330);
+                        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 330);
                         toast.show();
-                        productsymbol = result.getText();
+                        symbol = result.getText();
                     }
                 });
             }
@@ -71,6 +70,7 @@ public class ScanActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //finish();
                 //ScanActivity.getInstance(getApplicationContext()).logout();
+                employeeLogin();
                 productLogin();
             }
 
@@ -84,7 +84,6 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     // public void checkItemInWarehouse() {
@@ -150,7 +149,7 @@ public class ScanActivity extends AppCompatActivity {
 
                 //creating request parameters
                 HashMap<String, String> params = new HashMap<>();
-                params.put("productsymbol", productsymbol);
+                params.put("productsymbol", symbol);
                 //params.put("password", password);
 
                 //returing the response
@@ -162,16 +161,75 @@ public class ScanActivity extends AppCompatActivity {
         ul.execute();
     }
 
+    private void employeeLogin() {
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mCodeScanner.startPreview();
-    }
 
-    @Override
-    protected void onPause() {
-        mCodeScanner.releaseResources();
-        super.onPause();
+        class EmployeeLogin extends AsyncTask<Void, Void, String> {
+
+            ProgressBar progressBar;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                //progressBar = (ProgressBar) findViewById(R.id.progressBar);
+                //progressBar.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                //progressBar.setVisibility(View.GONE);
+
+
+                try {
+                    //converting response to json object
+                    JSONObject obj = new JSONObject(s);
+
+                    //if no error in response
+                    if (!obj.getBoolean("error")) {
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+
+                        //getting the product from the response
+                        JSONObject employeeJson = obj.getJSONObject("employee");
+
+                        //creating a product object
+                        Employee employee = new Employee(
+                                employeeJson.getInt("id"),
+                                employeeJson.getString("surname"),
+                                employeeJson.getString("name"),
+                                employeeJson.getString("symbol")
+                        );
+
+                        //storing the employee in shared preferences
+                        SharedPrefManager.getInstance(getApplicationContext()).employeeLogin(employee);
+
+                        //starting the profile activity
+                        finish();
+                        startActivity(new Intent(getApplicationContext(), EmployeeInfoActivity.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Product does not exist in warehouse database", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                //creating request handler object
+                RequestHandler requestHandler = new RequestHandler();
+
+                //creating request parameters
+                HashMap<String, String> params = new HashMap<>();
+                params.put("productsymbol", symbol);
+                //params.put("password", password);
+
+                //returing the response
+                return requestHandler.sendPostRequest(URLs.URL_CHECK_PRODUCT, params);
+            }
+        }
+
+        EmployeeLogin ul = new EmployeeLogin();
+        ul.execute();
     }
 }
