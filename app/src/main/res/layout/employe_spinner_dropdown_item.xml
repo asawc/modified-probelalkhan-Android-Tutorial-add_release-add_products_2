@@ -8,35 +8,34 @@
     <CheckedTextView
         android:id="@+id/symbol"
         style="?android:attr/spinnerDropDownItemStyle"
-        android:singleLine="true"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:ellipsize="marquee"
-        android:text="Symbol"
-        android:textSize="15dp"/>
-
-    <CheckedTextView
-        android:id="@+id/name"
-        style="?android:attr/spinnerDropDownItemStyle"
         android:singleLine="true"
-        android:layout_width="wrap_content"
-        android:layout_toRightOf="@id/symbol"
-        android:layout_height="50dp"
-        android:ellipsize="marquee"
-        android:text="Name"
-        android:textSize="20dp" />
+        android:text="RXH000001"
+        android:textSize="20sp" />
 
     <CheckedTextView
         android:id="@+id/surname"
         style="?android:attr/spinnerDropDownItemStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="139dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="5dp"
-        android:layout_toRightOf="@id/name"
+        android:layout_toEndOf="@id/symbol"
         android:ellipsize="marquee"
         android:singleLine="true"
-        android:text="surname"
-        android:textSize="20dp" />
+        android:text="Lewandowski"
+        android:textSize="20sp" />
+
+    <CheckedTextView
+        android:id="@+id/name"
+        style="?android:attr/spinnerDropDownItemStyle"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/surname"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Mieczysław"
+        android:textSize="20sp" />
 
 </LinearLayout>
