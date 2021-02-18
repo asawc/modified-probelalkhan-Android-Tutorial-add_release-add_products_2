@@ -330,13 +330,13 @@ public class AddReleaseActivityCustViewDial extends AppCompatActivity {
             LayoutInflater inflater = getLayoutInflater();
             View layout = inflater.inflate(R.layout.employe_spinner_dropdown_item, parent, false);
 
-            CheckedTextView symbol = (CheckedTextView) layout.findViewById(R.id.symbol);
+            TextView symbol = (TextView) layout.findViewById(R.id.symbol);
             symbol.setText(employeeViews.get(position).getSymbol());
 
-            CheckedTextView name = (CheckedTextView) layout.findViewById(R.id.name);
+            TextView name = (TextView) layout.findViewById(R.id.name);
             name.setText(employeeViews.get(position).getName());
 
-            CheckedTextView surname = (CheckedTextView) layout.findViewById(R.id.surname);
+            TextView surname = (TextView) layout.findViewById(R.id.surname);
             surname.setText(employeeViews.get(position).getSurname());
 /*
             if(position == 0) {
