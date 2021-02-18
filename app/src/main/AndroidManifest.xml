@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity android:name="myapp.releaseActivity.archive.AddReleaseActivitySpinner"></activity>
         <activity android:name="myapp.releaseActivity.AddReleaseActivityCustViewDial">
 
@@ -36,6 +37,7 @@
         <activity android:name="myapp.ShowEmployeesActivity" />
         <activity android:name="myapp.AddEmployeeActivity" />
         <activity android:name="myapp.AddProductActivity" />
+        <activity android:name="myapp.EmployeeInfoActivity" />
         <activity android:name="myapp.ProductInfoActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name="myapp.ScanActivity" />

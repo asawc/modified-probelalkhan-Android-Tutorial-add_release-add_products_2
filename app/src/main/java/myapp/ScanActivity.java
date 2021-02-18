@@ -207,7 +207,7 @@ public class ScanActivity extends AppCompatActivity {
                         finish();
                         startActivity(new Intent(getApplicationContext(), EmployeeInfoActivity.class));
                     } else {
-                        Toast.makeText(getApplicationContext(), "Product does not exist in warehouse database", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Employee does not exist in the database", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -221,11 +221,11 @@ public class ScanActivity extends AppCompatActivity {
 
                 //creating request parameters
                 HashMap<String, String> params = new HashMap<>();
-                params.put("productsymbol", symbol);
+                params.put("symbol", symbol);
                 //params.put("password", password);
 
                 //returing the response
-                return requestHandler.sendPostRequest(URLs.URL_CHECK_PRODUCT, params);
+                return requestHandler.sendPostRequest(URLs.URL_CHECK_EMPLOYEE, params);
             }
         }
 

@@ -103,9 +103,9 @@ public class SharedPrefManager {
     public void employeeLogin(Employee employee) {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(KEY_ID, employee.getEmployeeId());
-        editor.putString(KEY_EMPLOYEE_NAME, employee.getEmployeeName());
+        editor.putString(KEY_EMPLOYEE_SYMBOL, employee.getEmployeeSymbol());
         editor.putString(KEY_EMPLOYEE_SURNAME, employee.getEmployeeSurname());
+        editor.putString(KEY_EMPLOYEE_NAME, employee.getEmployeeName());
         //editor.putString(KEY_GENDER, user.getGender());
         editor.apply();
     }
@@ -115,8 +115,8 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return new Employee(
                 sharedPreferences.getInt(KEY_EMPLOYEE_ID, -1),
-                sharedPreferences.getString(KEY_EMPLOYEE_NAME, null),
                 sharedPreferences.getString(KEY_EMPLOYEE_SURNAME, null),
+                sharedPreferences.getString(KEY_EMPLOYEE_NAME, null),
                 sharedPreferences.getString(KEY_EMPLOYEE_SYMBOL, null) //,
                 //sharedPreferences.getString(KEY_GENDER, null)
         );

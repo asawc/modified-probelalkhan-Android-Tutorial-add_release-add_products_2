@@ -27,12 +27,12 @@ public class Employee {
         //this.gender = gender;
         for (id = 0; id < 5; ++id) {
             //employee[id] = [name, surname];
-            this.employeesNames[id] = name;
-            this.employeesSurnames[id] = surname;
-            this.employeesSymbols[id] = symbol;
-            employees[id][0] = employeesNames[id];
-            employees[id][1] = employeesSurnames[id];
-            employees[id][2] = employeesSymbols[id];
+//            this.employeesNames[id] = name;
+//            this.employeesSurnames[id] = surname;
+//            this.employeesSymbols[id] = symbol;
+//            employees[id][0] = employeesNames[id];
+//            employees[id][1] = employeesSurnames[id];
+//            employees[id][2] = employeesSymbols[id];
         }
     }
     //employee[2] = [name, surname];

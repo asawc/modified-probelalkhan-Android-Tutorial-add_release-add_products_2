@@ -8,6 +8,7 @@ public class URLs {
     public static final String URL_REGISTER = ROOT_URL + "signup";
     public static final String URL_LOGIN = ROOT_URL + "login";
     public static final String URL_CHECK_PRODUCT = ROOT_URL + "check_product";
+    public static final String URL_CHECK_EMPLOYEE = ROOT_URL + "check_employee";
     public static final String URL_ADD_PRODUCT = ROOT_URL + "add_product";
     public static final String URL_GET_ALL_PRODUCTS = ROOT_URL + "get_all_products";
     public static final String URL_GET_ALL_EMPLOYEES = ROOT_URL + "get_all_employees";
